@@ -31,23 +31,23 @@ namespace Custom_Class_Assignment
             if (userInputCon == 1) {
 
                 Console.WriteLine(nikeShoes.GetItemName());
-                Console.WriteLine("The selling price is "+nikeShoes.GetSellingPrice());
-                Console.WriteLine("The cost to make this item is "+nikeShoes.GetCostToMake());
-                Console.WriteLine("The profit for this item is "+nikeShoes.TotalProfit(1));
+                Console.WriteLine("The selling price is "+nikeShoes.GetSellingPrice().ToString("C"));
+                Console.WriteLine("The cost to make this item is "+nikeShoes.GetCostToMake().ToString("C"));
+                Console.WriteLine("The profit for this item is "+nikeShoes.TotalProfit(1).ToString("C"));
 
             } else if (userInputCon == 2) {
 
                 Console.WriteLine(iPhone.GetItemName());
-                Console.WriteLine("The selling price is "+iPhone.GetSellingPrice());
-                Console.WriteLine("The cost to make this item is "+iPhone.GetCostToMake());
-                Console.WriteLine("The total profit for this item is "+iPhone.TotalProfit(1));
+                Console.WriteLine("The selling price is "+iPhone.GetSellingPrice().ToString("C"));
+                Console.WriteLine("The cost to make this item is "+iPhone.GetCostToMake().ToString("C"));
+                Console.WriteLine("The total profit for this item is "+iPhone.TotalProfit(1).ToString("C"));
 
             } else if (userInputCon == 3) {
 
                 Console.WriteLine(powerBeatsPro.GetItemName());
-                Console.WriteLine("The selling price is "+powerBeatsPro.GetSellingPrice());
-                Console.WriteLine("The cost to make this item is "+powerBeatsPro.GetCostToMake());
-                Console.WriteLine("The total profit for this item is "+powerBeatsPro.TotalProfit(1));
+                Console.WriteLine("The selling price is "+powerBeatsPro.GetSellingPrice().ToString("C"));
+                Console.WriteLine("The cost to make this item is "+powerBeatsPro.GetCostToMake().ToString("C"));
+                Console.WriteLine("The total profit for this item is "+powerBeatsPro.TotalProfit(1).ToString("C"));
 
             }
 
@@ -92,7 +92,7 @@ namespace Custom_Class_Assignment
             decimal userHowMany = Product.ValidateDecimal(Console.ReadLine());
 
 
-            
+            decimal totalProfit = (userSellingPrice - userCost ) * userHowMany;
 
 
 
@@ -105,11 +105,11 @@ namespace Custom_Class_Assignment
             UserProduct.SetSellingPrice(userSellingPrice);
 
             Console.WriteLine("You chose {0} as your product.",UserProduct.GetItemName());
-            Console.WriteLine("You said it costs {0} amount to make",UserProduct.GetCostToMake().ToString("C"));
-            Console.WriteLine("You said it sells for {0} amount",UserProduct.GetSellingPrice().ToString("C"));
-            
+            Console.WriteLine("You said it costs {0} to make",UserProduct.GetCostToMake().ToString("C"));
+            Console.WriteLine("You said it sells for {0}",UserProduct.GetSellingPrice().ToString("C"));
 
-            Console.WriteLine("Your profit for these items will be " + (userSellingPrice - userCost).ToString("C"));
+
+            Console.WriteLine("Your profit for these items will be " + totalProfit.ToString("C"));
 
 
 
