@@ -1,20 +1,9 @@
 ﻿<Properties StartupConfiguration="{7116380E-44A6-453D-8111-051B28ADD337}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="Custom_Class_Assignment/Program.cs">
     <Files>
-      <File FileName="Custom_Class_Assignment/Product.cs" Line="16" Column="10" />
-      <File FileName="Custom_Class_Assignment/Program.cs" Line="19" Column="1" NotebookId="1" />
+      <File FileName="Custom_Class_Assignment/Program.cs" Line="115" Column="1" />
+      <File FileName="Custom_Class_Assignment/Product.cs" Line="73" Column="35" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="Custom_Class_Assignment" expanded="True">
-            <Node name="Custom_Class_Assignment" expanded="True">
-              <Node name="Program.cs" selected="True" />
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.Custom__Class__Assignment PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

@@ -67,7 +67,40 @@ namespace Custom_Class_Assignment
             decimal profit = mSellingPrice - mCostToMake;
             return profit;
         }
-        
+
+
+
+        //these are my validators.
+        public static string ValidateString (string userInput)
+        {
+
+            while (string.IsNullOrWhiteSpace(userInput))
+            {
+                Console.WriteLine("\r\n Please type in a name of a product");
+                userInput = Console.ReadLine();
+            }
+            return userInput;
+        }
+
+
+
+        public static decimal ValidateDecimal (string userInput)
+        {
+            
+            decimal userQuantityCon;
+
+            while (!(decimal.TryParse(userInput, out userQuantityCon) && userQuantityCon > 0))
+            {
+                Console.WriteLine("Please only select only positive numbers");
+                userInput = Console.ReadLine();
+            }
+
+            return userQuantityCon;
+
+
+        }
+
+
 
     }
 

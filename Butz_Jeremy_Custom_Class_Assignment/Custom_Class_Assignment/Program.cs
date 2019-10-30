@@ -17,7 +17,7 @@ namespace Custom_Class_Assignment
             
 
 
-            Console.WriteLine("Hello lets take a look at some items we have online\r\n we have Nike Shoes an iPhone 11 and PowerBeats");
+            Console.WriteLine("Hello lets take a look at some items we have online\r\nWe have Nike Shoes an iPhone 11 and PowerBeats");
             Console.WriteLine("Please select an item from the list 1-3");
 
             string userInput = Console.ReadLine();
@@ -73,8 +73,49 @@ namespace Custom_Class_Assignment
                 Console.WriteLine("The profit for the item would be "+ powerBeatsPro.TotalProfit(userQuantityCon)*userQuantityCon);
 
             }
+
+			Console.WriteLine("Press enter to clear screen.");
+			Console.ReadLine();
+			Console.Clear();
+
+
+            Console.WriteLine("Let's sell a product you want to sell!\r\nWhat is the name of your item");
+            string userProduct = Product.ValidateString(Console.ReadLine());
+
+            Console.WriteLine("\r\nHow much does this item cost to to make?");
+            decimal userCost = Product.ValidateDecimal(Console.ReadLine());
+
+            Console.WriteLine("How much are we selling this item for?");
+            decimal userSellingPrice = Product.ValidateDecimal(Console.ReadLine());
+
+            Console.WriteLine("How many items are you trying to sell?");
+            decimal userHowMany = Product.ValidateDecimal(Console.ReadLine());
+
+
             
+
+
+
+            Product UserProduct = new Product(userProduct,userCost,userSellingPrice);
+
             
+
+            UserProduct.SetItemName(userProduct);
+            UserProduct.SetCostToMake(userCost);
+            UserProduct.SetSellingPrice(userSellingPrice);
+
+            Console.WriteLine("You chose {0} as your product.",UserProduct.GetItemName());
+            Console.WriteLine("You said it costs {0} amount to make",UserProduct.GetCostToMake().ToString("C"));
+            Console.WriteLine("You said it sells for {0} amount",UserProduct.GetSellingPrice().ToString("C"));
+            
+
+            Console.WriteLine("Your profit for these items will be " + (userSellingPrice - userCost).ToString("C"));
+
+
+
+
+
+
 
 
         }
