@@ -99,7 +99,17 @@ namespace Custom_Class_Assignment
 
 
         }
+        public static decimal ValidateDecimalRange (string userInput)
+        {
+            decimal userInputCon;
+            while (!(decimal.TryParse(userInput, out userInputCon) && userInputCon <= 3 && userInputCon > 0))
+            {
+                Console.WriteLine("\r\n Please only choose items 1 - 3 to see more information");
+                userInput = Console.ReadLine();
+            }
 
+            return userInputCon;
+        }
 
 
     }

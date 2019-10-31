@@ -20,29 +20,23 @@ namespace Custom_Class_Assignment
             Console.WriteLine("Hello lets take a look at some items we have online\r\nWe have Nike Shoes an iPhone 11 and PowerBeats");
             Console.WriteLine("Please select an item from the list 1-3");
 
-            string userInput = Console.ReadLine();
-            decimal userInputCon;
-            while (!(decimal.TryParse(userInput, out userInputCon) && userInputCon <=3 && userInputCon >0))
-            {
-                Console.WriteLine("\r\n Please only choose items 1 - 3 to see more information");
-                userInput = Console.ReadLine();
-            }
+            decimal userInput = Product.ValidateDecimalRange(Console.ReadLine());
 
-            if (userInputCon == 1) {
+            if (userInput == 1) {
 
                 Console.WriteLine(nikeShoes.GetItemName());
                 Console.WriteLine("The selling price is "+nikeShoes.GetSellingPrice().ToString("C"));
                 Console.WriteLine("The cost to make this item is "+nikeShoes.GetCostToMake().ToString("C"));
                 Console.WriteLine("The profit for this item is "+nikeShoes.TotalProfit(1).ToString("C"));
 
-            } else if (userInputCon == 2) {
+            } else if (userInput == 2) {
 
                 Console.WriteLine(iPhone.GetItemName());
                 Console.WriteLine("The selling price is "+iPhone.GetSellingPrice().ToString("C"));
                 Console.WriteLine("The cost to make this item is "+iPhone.GetCostToMake().ToString("C"));
                 Console.WriteLine("The total profit for this item is "+iPhone.TotalProfit(1).ToString("C"));
 
-            } else if (userInputCon == 3) {
+            } else if (userInput == 3) {
 
                 Console.WriteLine(powerBeatsPro.GetItemName());
                 Console.WriteLine("The selling price is "+powerBeatsPro.GetSellingPrice().ToString("C"));
@@ -52,25 +46,21 @@ namespace Custom_Class_Assignment
             }
 
             Console.WriteLine("How many of this item would you like?");
-            string userQuantity = Console.ReadLine();
-            decimal userQuantityCon;
+            decimal userQuantityCon = Product.ValidateDecimal(Console.ReadLine());
 
-            while (!(decimal.TryParse(userQuantity, out userQuantityCon) && userQuantityCon >0))
-            {
-                Console.WriteLine("Please only select only positive numbers");
-                userQuantity = Console.ReadLine();
-
-            }
+            decimal profitNike = nikeShoes.TotalProfit(userQuantityCon) * userQuantityCon;
+            decimal profitiPhone = iPhone.TotalProfit(userQuantityCon) * userQuantityCon;
+            decimal profitPowerBeats = powerBeatsPro.TotalProfit(userQuantityCon) * userQuantityCon;
 
 
-            if (userInputCon == 1) {
-                Console.WriteLine("The total profit for the item would be " + nikeShoes.TotalProfit(userQuantityCon)*userQuantityCon);
+            if (userInput == 1) {
+                Console.WriteLine("The total profit for the item would be " + profitNike.ToString("C"));
 
-            } else if (userInputCon == 2) {
-                Console.WriteLine("The total profit for the item would be " + iPhone.TotalProfit(userQuantityCon)*userQuantityCon);
+            } else if (userInput == 2) {
+                Console.WriteLine("The total profit for the item would be " + profitiPhone.ToString("C"));
 
-            } else if (userInputCon == 3) {
-                Console.WriteLine("The profit for the item would be "+ powerBeatsPro.TotalProfit(userQuantityCon)*userQuantityCon);
+            } else if (userInput == 3) {
+                Console.WriteLine("The profit for the item would be "+ profitPowerBeats.ToString("C"));
 
             }
 
@@ -112,12 +102,48 @@ namespace Custom_Class_Assignment
             Console.WriteLine("Your profit for these items will be " + totalProfit.ToString("C"));
 
 
+            Console.WriteLine("Press enter to clear screen.");
+            Console.ReadLine();
+            Console.Clear();
 
 
+            Console.WriteLine("Lets built a character together");
+            Console.Write("\r\nWe need to know eye color, hair color, occupation , height and weight.");
+
+            Console.WriteLine("Pick and eye color");
+            string eyeColor = Product.ValidateString(Console.ReadLine());
 
 
+            Console.WriteLine("Hair Color?");
+            string hairColor = Product.ValidateString(Console.ReadLine());
 
 
+            Console.WriteLine("Occupation?");
+            string occupation = Product.ValidateString(Console.ReadLine());
+
+
+            Console.WriteLine("Height?");
+            decimal height = Product.ValidateDecimal(Console.ReadLine());
+
+
+            Console.WriteLine("Weight?");
+            decimal weight = Product.ValidateDecimal(Console.ReadLine());
+
+
+            Character userCharacter = new Character(eyeColor, hairColor, occupation, height, weight);
+
+            
+
+
+            userCharacter.SetEyes(eyeColor);
+            userCharacter.SetHair(hairColor);
+            userCharacter.SetJob(occupation);
+            userCharacter.SetHeight(height);
+            userCharacter.SetWeight(weight);
+
+            string[] eyeHairJob = {userCharacter.GetEyes(),userCharacter.GetHair(),userCharacter.GetJob() };
+
+            Console.WriteLine(eyeHairJob[0,1,2]);
         }
     }
 }
