@@ -1,9 +1,9 @@
 ﻿<Properties StartupConfiguration="{7116380E-44A6-453D-8111-051B28ADD337}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Custom_Class_Assignment/NewConstructorClass.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Custom_Class_Assignment/Program.cs">
     <Files>
-      <File FileName="Custom_Class_Assignment/Program.cs" Line="54" Column="1" />
+      <File FileName="Custom_Class_Assignment/Program.cs" Line="137" Column="1" />
+      <File FileName="Custom_Class_Assignment/NewConstructorClass.cs" Line="53" Column="95" />
       <File FileName="Custom_Class_Assignment/Product.cs" Line="62" Column="1" />
-      <File FileName="Custom_Class_Assignment/NewConstructorClass.cs" Line="9" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.Custom__Class__Assignment PreferredExecutionTarget="MonoDevelop.Default" />

@@ -135,15 +135,12 @@ namespace Custom_Class_Assignment
             
 
 
-            userCharacter.SetEyes(eyeColor);
-            userCharacter.SetHair(hairColor);
-            userCharacter.SetJob(occupation);
-            userCharacter.SetHeight(height);
-            userCharacter.SetWeight(weight);
+           
 
-            string[] eyeHairJob = {userCharacter.GetEyes(),userCharacter.GetHair(),userCharacter.GetJob() };
 
-            Console.WriteLine(eyeHairJob[0,1,2]);
+            
+
+            
         }
     }
 }
