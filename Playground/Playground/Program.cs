@@ -6,20 +6,50 @@ namespace Playground
 {
     class Program
     {
+
         static void Main(string[] args)
         {
 
 
 
             Console.WriteLine("Enter a random number?");
-            double randNum = Convert.ToDouble(Console.ReadLine());
+            var randNum = Convert.ToDouble(Console.ReadLine());
 
             Console.WriteLine("Enter your name");
-            string randName = Console.ReadLine();
+            var randName = Console.ReadLine();
 
             Console.WriteLine("Enter how much money you made in 10 hours today");
 
-            double randMoney = Convert.ToDouble(Console.ReadLine());
+            var randMoney = Convert.ToDouble(Console.ReadLine());
+
+
+            switch (randNum)    
+            {
+
+                case 1:
+                    Console.WriteLine("You entered in the number 1");
+                    break;
+
+                case 2:
+                    Console.WriteLine("You entered in number 2");
+                    break;
+
+
+                case 3:
+                    Console.WriteLine("You entered in number 3");
+                    break;
+
+
+                case 4:
+                    Console.WriteLine("You entered in number 4");
+                    break;
+
+                default:
+                    Console.WriteLine("You didn't enter in a valid number");
+                    break;
+            }
+
+
 
 
 
@@ -27,6 +57,8 @@ namespace Playground
 
             object[] input = {randNum,randName,randMoney};
 
+
+            
             for (int i = 0; i < input.Length; i++)
             {
                 Console.WriteLine(input[i]);
@@ -34,19 +66,10 @@ namespace Playground
 
 
              Console.WriteLine ("I Made a change and now you have to use Git Pull to see it");
-         
-         
 
 
 
-
-
-
-
-
-
-
-
+            Console.WriteLine( input.GetValue(0));
 
 
 
