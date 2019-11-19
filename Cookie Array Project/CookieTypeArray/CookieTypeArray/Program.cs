@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace CookieTypeArray
 {
@@ -22,9 +23,15 @@ namespace CookieTypeArray
 
 
 
-
-            string [] cookieTypeArray = cookieTypeString.Split(",");
             
+            string [] cookieTypeArray = cookieTypeString.Split(",");
+
+            foreach (string i in cookieTypeArray)
+            {
+                i.Trim(' ');
+            }
+
+
 
             for (int i = 0; i < cookieTypeArray.Length; i++)
             {
@@ -32,9 +39,45 @@ namespace CookieTypeArray
                 Console.WriteLine(cookieTypeArray[i]);
             }
 
+            Console.WriteLine("\r\nNow we need to find out how much you want to sell each package for");
+
+            decimal[] cookieCostEach = Validate.PromptCookieCosts(cookieTypeArray);
+
+            for (int i = 0; i < cookieCostEach.Length; i++)
+            {
+                
+
+                Console.WriteLine("You chose {0} at the cost of {1}",cookieCostEach[i].ToString("C"),cookieTypeArray[i]);
+
+            }
+
+            
+
+
+            decimal totalCookieCost = Validate.TotalCookieCost(cookieCostEach);
+
+            Console.WriteLine("The total for all those cookie types is "+totalCookieCost.ToString("C"));
 
 
 
+
+            Console.WriteLine("How many cookies are in each package?");
+
+            int amountPer = Validate.ValidateInt(Console.ReadLine());
+
+
+            Console.WriteLine("What is the cost of each individual cookie");
+
+            decimal costPer = Validate.ValidateDecimal(Console.ReadLine());
+
+            
+
+
+            decimal totalProfit = Validate.AmountSoldFor(cookieTypeArray.Length, amountPer, costPer);
+
+
+            Console.WriteLine("You will make {0} if you sell all {1} cookie types\r\n If each package contains {2} sold for {3} per cookie",totalProfit.ToString("C"),cookieTypeArray.Length,amountPer,costPer.ToString("C"));
+            
 
 
         }
