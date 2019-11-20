@@ -59,7 +59,6 @@ namespace CookieTypeArray
             {
                 Console.WriteLine("How much for {0}?",CookieList[i]);
                 cookieCostEach[i] = Validate.ValidateDecimal(Console.ReadLine());
-
             }
 
 
@@ -76,9 +75,6 @@ namespace CookieTypeArray
             for (int i = 0; i < CookieCost.Length; i++)
             {
                 totalSum += CookieCost[i];
-
-
-
             }
 
             return totalSum;
@@ -89,17 +85,11 @@ namespace CookieTypeArray
 
         public static decimal AmountSoldFor (int TotalCookieTypes,int IndivCookies,decimal CostPer)
         {
-            decimal totalPerPackage = IndivCookies * CostPer;
-
-
-
-            decimal absoluteTotal = totalPerPackage * TotalCookieTypes;
+            decimal totalPerPackage = (IndivCookies * CostPer);
+            decimal absoluteTotal = (totalPerPackage * TotalCookieTypes);
 
 
             return absoluteTotal;
-
-
-
         }
 
 

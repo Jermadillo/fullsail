@@ -28,7 +28,7 @@ namespace CookieTypeArray
 
             foreach (string i in cookieTypeArray)
             {
-                i.Trim(' ');
+                i.Trim();
             }
 
 
@@ -75,8 +75,10 @@ namespace CookieTypeArray
 
             decimal totalProfit = Validate.AmountSoldFor(cookieTypeArray.Length, amountPer, costPer);
 
+            decimal finalProfit = totalProfit - totalCookieCost;
 
-            Console.WriteLine("You will make {0} if you sell all {1} cookie types\r\n If each package contains {2} sold for {3} per cookie",totalProfit.ToString("C"),cookieTypeArray.Length,amountPer,costPer.ToString("C"));
+
+            Console.WriteLine("You will make {0} if you sell all {1} cookie types\r\n If each package contains {2} sold for {3} per cookie",finalProfit.ToString("C"),cookieTypeArray.Length,amountPer,costPer.ToString("C"));
             
 
 
